@@ -42,4 +42,12 @@
     print(difflib.SequenceMatcher(None, a, b).quick_ratio())
     # 结果为0.625
     # 注释：虽然其结果不错，但在对比逗号，句号等标点符号时，误差较大。
-    # 待优化。
+    
+# Idea_five:
+    # 寻找到另一个对比库，Levenshtein
+    from Levenshtein import *
+    a = "道可道也，非常道也。"
+    b = "名非名也、非名是也。"
+    print(ratio(u"%s"%a, u"%s"%b))
+    # 其结果为 0.4
+    # 注释：结果满意，且对比标点符号时，也可得出结果，其结果暂未发现误差。
